@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Movie Review Prediction Model</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" />
+
+    <link rel="stylesheet" href="{% static "style/style.css" %}">
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="main-header text-center py-3">
+        <h2>Detección de tipo de reseña en peliculas, ya sea positiva o negativa</h2>
+      </header>
+      <div class="content-container">
+        {% block content %}{% endblock content %}
+      </div>
+      <footer class="main-footer text-center py-3">
+        <p>@ Grupo G23 de la clase Inteligencia de Negocios de la Universidad de los Andes. 2023</p>
+      </footer>
+    </div>
+  </body>
+</html>

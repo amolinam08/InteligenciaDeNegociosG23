@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container my-5">
+    <h5 class="text-center my-4 text-weight-light">La predicción realizada para el texto ingresado es: <b>{{prediction}}</b></h5>
+    <p class="text-center">Este resultado se da con un <b>{{probability}} % de seguridad.</b></p>
+
+    <h6 class="text-center mb-3">Métricas del modelo utilizado para realizar la predicción: </h6>
+    <ul class="list-unstyled d-flex flex-wrap justify-content-center">
+        <li class="mx-3 mb-2">Accuracy: <b>{{accuracy |floatformat:2}} %</b></li>
+        <li class="mx-3 mb-2">Precision: <b>{{precision |floatformat:2}} %</b></li>
+        <li class="mx-3 mb-2">Recall: <b>{{recall |floatformat:2}} %</b></li>
+        <li class="mx-3 mb-2">F1 Score: <b>{{f1_score |floatformat:2}} %</b></li>
+    </ul>
+    
+    <div class="d-flex justify-content-center">
+        <a href="{% url 'home' %}" class="home_link_container btn btn-secondary mt-3 shadow-lg d-flex justify-content-center align-items-center"><i class="fas fa-arrow-left me-2"></i>Volver al inicio</a>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,48 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-12">
+            <p class="text-center my-4 lead">Esta aplicación permite detectar intención de las reseñas de las peliculas a partir de textos, mensajes o publicaciones escritas por usuarios. El trabajo de predicción se realiza a partir de un modelo de clasificación entrenado por medio de un algoritmo Random Forest. El modelo fue entrenado con cerca de 5000 reseñas. A continuación, escoja si quiere obtener una predicción a partir de un texto o si quiere acceder al API del modelo. Desde el API, podrá obtener predicciones de multiples datos y a su vez reentrenar el modelo.</p>
+        </div>
+    </div>
+    <div class="row my-4">
+        <div class="col-md-6 mb-3">
+            <a href="{% url 'predict' %}" class="home_link_container btn btn-primary btn-lg w-100 shadow-lg d-flex justify-content-center align-items-center"><i class="fas fa-film me-2"></i>Obtener predicción de reseñas de peliculas</a>
+        </div>
+        <div class="col-md-6 mb-3">
+            <a href="{% url 'api' %}" class="home_link_container btn btn-secondary btn-lg w-100 shadow-lg d-flex justify-content-center align-items-center"><i class="fas fa-cogs me-2"></i>Ver API</a>
+        </div>
+    </div>
+    <div class="my-4">
+        <h4 class="mb-4 text-center">Ejemplo de textos y predicción</h4>
+        <table class="table table-striped table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Publicación</th>
+                    <th scope="col">Predicción de reseñas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Esta es sin duda alguna la mejor pelicula que he visto, una experien...</td>
+                    <td>Calificación positiva</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Esta pelicula es muy mala, me pareció mucho mejor la primera, esta fue un desastr...</td>
+                    <td>Calificación negativa</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Fue una gran película para mis hijos, la disfrutaron mucho. Mi esposo también dis...</td>
+                    <td>Calificación positiva</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content %}

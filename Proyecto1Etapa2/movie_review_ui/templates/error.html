@@ -1,0 +1,8 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container display-flex flex-column align-items-center text-center">
+    <h3 class="font-weight-light"><b class="text-danger">Error:</b> {{error}}</h3>
+    <a href="{% url 'home' %}" class="btn btn-dark mt-4"><- Volver al inicio</a>
+</div>
+{% endblock content %} 
